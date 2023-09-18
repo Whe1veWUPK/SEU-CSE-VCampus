@@ -8,7 +8,7 @@ Other five students(mainly refers to who is responsible for coding) are as follo
 
 [yfyou](https://gitee.com/yfyou) and [wwb](https://gitee.com/wwb_WuHuuu) are mainly responsible for the backend's development.
 
-Me and [刘瀚隆](https://gitee.com/Liuhanlong_admin) are mainly responsible for the database's maintain and development.
+Me and [刘瀚隆](https://gitee.com/Liuhanlong_admin) are mainly responsible for the database part's maintain and development.
 
 And thanks for the beautiful images provided by ***我磕的cp是真的除非我是假的***.
 
