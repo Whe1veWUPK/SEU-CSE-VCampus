@@ -3,7 +3,6 @@ This Project is made by seven students in 2023's summer school.
 
 Following are the students who mainly is responsible for the codes.
 
-Other five students(mainly refers to who is responsible for coding) are as followed:
 [HankCaptain](https://gitee.com/hankcaptain) and [缪缪的dog](https://gitee.com/f0uR51) are mainly responsible for the frontend's development.
 
 [yfyou](https://gitee.com/yfyou) and [wwb](https://gitee.com/wwb_WuHuuu) are mainly responsible for the backend's development.
