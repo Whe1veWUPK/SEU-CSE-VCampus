@@ -1,7 +1,7 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.*;
+import db.DbHelper;
+import vo.*;
 
 import java.sql.ResultSet;
 
@@ -110,20 +110,20 @@ public class StudentDao {
         try{
             ResultSet rs=DbHelper.executeQuery(sqlString);
             while(rs.next()){
-               String num=rs.getString("sNum");
-               if(num.equals(stuNum)) {
-                   String name = rs.getString("sName");
-                   Byte age = rs.getByte("sAge");
-                   Boolean gend = rs.getBoolean("sGend");
+                String num=rs.getString("sNum");
+                if(num.equals(stuNum)) {
+                    String name = rs.getString("sName");
+                    Byte age = rs.getByte("sAge");
+                    Boolean gend = rs.getBoolean("sGend");
 
-                   String id = rs.getString("sId");
-                   String major = rs.getString("sMajor");
-                   String sch = rs.getString("sSch");
-                   String addr = rs.getString("sAddr");
-                   String intake = rs.getString("sIntake");
-                   Student student = new Student(num, name, age, gend, id, sch, major, addr, intake);
-                   return student;
-               }
+                    String id = rs.getString("sId");
+                    String major = rs.getString("sMajor");
+                    String sch = rs.getString("sSch");
+                    String addr = rs.getString("sAddr");
+                    String intake = rs.getString("sIntake");
+                    Student student = new Student(num, name, age, gend, id, sch, major, addr, intake);
+                    return student;
+                }
             }
             return null;
         }catch(Exception e){

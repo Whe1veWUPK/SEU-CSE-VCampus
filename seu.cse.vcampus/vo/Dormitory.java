@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 /**
  * 类 {@code Dormitory}宿舍类，封装着宿舍的相关信息
  *
@@ -22,9 +22,9 @@ public class Dormitory {
      * @param domMem 传入的宿舍成员
      */
     public Dormitory(String id,Byte domCnt,String domMem){
-         set_domCnt(domCnt);
-         set_domID(id);
-         set_domMem(domMem);
+        set_domCnt(domCnt);
+        set_domID(id);
+        set_domMem(domMem);
     }
 
     /**

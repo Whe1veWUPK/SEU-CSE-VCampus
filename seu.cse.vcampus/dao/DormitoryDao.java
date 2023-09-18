@@ -1,7 +1,7 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.Dormitory;
+import db.DbHelper;
+import vo.Dormitory;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -126,24 +126,24 @@ public class DormitoryDao {
      * @return 查询到的全部宿舍的信息
      */
     public static ArrayList<Dormitory> queryAllDormitories(){
-       String sqlString="select*from tblDormitory";
-       ArrayList<Dormitory> dormitoryArrayList=new ArrayList<>();
-       try{
-           ResultSet rs=DbHelper.executeQuery(sqlString);
-           while(rs.next()){
-               String tblId=rs.getString("tblId");
-               Dormitory dormitory=queryDormitory(tblId);
-               if(dormitory!=null) {
-                   dormitoryArrayList.add(dormitory);
-               }
-           }
-       }catch(Exception e){
-           e.printStackTrace();
-       }
-       if(dormitoryArrayList.isEmpty()){
-           return null;
-       }
-       return dormitoryArrayList;
+        String sqlString="select*from tblDormitory";
+        ArrayList<Dormitory> dormitoryArrayList=new ArrayList<>();
+        try{
+            ResultSet rs=DbHelper.executeQuery(sqlString);
+            while(rs.next()){
+                String tblId=rs.getString("tblId");
+                Dormitory dormitory=queryDormitory(tblId);
+                if(dormitory!=null) {
+                    dormitoryArrayList.add(dormitory);
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        if(dormitoryArrayList.isEmpty()){
+            return null;
+        }
+        return dormitoryArrayList;
     }
 
 }

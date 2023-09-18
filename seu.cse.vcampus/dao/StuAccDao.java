@@ -1,7 +1,7 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.StuAcc;
+import db.DbHelper;
+import vo.StuAcc;
 
 
 import java.sql.ResultSet;
@@ -90,26 +90,26 @@ public class StuAccDao {
      * @return 查询到的学生账户 可能为 null(不存在)
      */
     public static StuAcc queryStuAcc(String stuAccID){
-       String sqlString="select * from tblStuAcc";
-       try{
-           ResultSet rs=DbHelper.executeQuery(sqlString);
-           while(rs.next()){
-               String curID=rs.getString("saId");
-               if(curID.equals(stuAccID)){
-                   String stuAccCour=rs.getString("saCour");
-                   String stuAccBook=rs.getString("saBook");
-                   String stuAccDom=rs.getString("saDom");
-                   String stuAccRes=rs.getString("saRes");
-                   double stuAccBal=rs.getDouble("saBal");
-                   StuAcc stuAcc=new StuAcc(stuAccID,stuAccCour,stuAccBook,stuAccDom,stuAccRes,stuAccBal);
-                   return stuAcc;
-               }
-           }
-           return null;
-       }catch(Exception e){
-           e.printStackTrace();
-       }
-       return null;
+        String sqlString="select * from tblStuAcc";
+        try{
+            ResultSet rs=DbHelper.executeQuery(sqlString);
+            while(rs.next()){
+                String curID=rs.getString("saId");
+                if(curID.equals(stuAccID)){
+                    String stuAccCour=rs.getString("saCour");
+                    String stuAccBook=rs.getString("saBook");
+                    String stuAccDom=rs.getString("saDom");
+                    String stuAccRes=rs.getString("saRes");
+                    double stuAccBal=rs.getDouble("saBal");
+                    StuAcc stuAcc=new StuAcc(stuAccID,stuAccCour,stuAccBook,stuAccDom,stuAccRes,stuAccBal);
+                    return stuAcc;
+                }
+            }
+            return null;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

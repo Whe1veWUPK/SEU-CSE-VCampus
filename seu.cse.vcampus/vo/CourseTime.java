@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 /**
  * 类 {@code CourseTime}课程时间类，封装着课程时间的相关信息
  *
@@ -70,7 +70,7 @@ public class CourseTime {
     /**
      * _startHour 的 get 方法
      * @return 课程的开始时间(Hour) _startHour
-      */
+     */
     public Byte get_startHour() {
         return _startHour;
     }
@@ -130,4 +130,5 @@ public class CourseTime {
     public void set_ctID(String _ctID) {
         this._ctID = _ctID;
     }
+
 }

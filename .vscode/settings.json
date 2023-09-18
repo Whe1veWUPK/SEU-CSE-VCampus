@@ -1,3 +1,20 @@
 {
-    "java.project.outputPath": "bin"
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\commons-lang-2.6.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\commons-logging-1.1.1.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\hsqldb.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\jackcess-2.1.3.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\ucanaccess-3.0.6.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\ucanload.jar",
+            "d:\\java\\commons-io-2.13.0\\commons-io-2.13.0.jar",
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\org.json.jar",
+            "d:\\JavaJars\\javax.mail.jar"
+        ],
+        "exclude": [
+            "d:\\Documents\\Related\\Sophomore Year Summer School\\Professional skills training (school-enterprise)\\lib\\json.jar"
+        ]
+    }
 }

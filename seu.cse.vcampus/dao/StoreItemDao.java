@@ -1,4 +1,4 @@
-package seu.cse.vcampus.dao;
+package dao;
 /**
  * 类 {@code StoreItemDao}提供对商品信息的增、删、改、查功能.
  *
@@ -7,8 +7,8 @@ package seu.cse.vcampus.dao;
  *
  * @since 2023/9/1
  */
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.StoreItem;
+import db.DbHelper;
+import vo.StoreItem;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class StoreItemDao {
      * @return 商品删除成功返回1，商品因不存在而删除失败返回-1，其他原因返回0.
      */
     public static Byte delStoreItem(String siid){
-       
+
         String sqlString="delete * from tblStoreItem where siId = '"+siid+"'";
         try{
             if (queryStoreItemById(siid)!=null){
@@ -116,7 +116,7 @@ public class StoreItemDao {
                     short sicnt = resultSet.getShort("siCnt");
                     StoreItem tmpStoreItem=new StoreItem(siid,tmpName,sipri,sicnt);
                     if(tmpStoreItem!=null){
-                    storeItem.add(tmpStoreItem);
+                        storeItem.add(tmpStoreItem);
                     }
                 }
             }
@@ -179,17 +179,4 @@ public class StoreItemDao {
         }
         return storeItemArrayList;
     }
-/*    public static void main(String[] args) {
-        float pri=3;
-        short cnt=100;
-        StoreItem storeItem1=new StoreItem("1","可口可乐",pri,cnt);
-        StoreItem storeItem2=new StoreItem("2","洁厕灵",pri,cnt);
-        StoreItem storeItem3=new StoreItem("3","百事可乐",pri,cnt);
-        StoreItem storeItem4=new StoreItem("4","雪碧",pri,cnt);
-        StoreItem storeItem5=new StoreItem("5","可口可乐",pri,cnt);
-        addStoreItem(storeItem5);
-        List<StoreItem>s=queryStoreItemByName(storeItem1.get_itemName());
-        System.out.println(s.get(0).get_itemID()+"+"+s.get(1).get_itemID());
-        System.out.println(queryStoreItemById("1").get_itemName());
-    }*/
 }

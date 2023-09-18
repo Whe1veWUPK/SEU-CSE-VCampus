@@ -1,4 +1,4 @@
-package seu.cse.vcampus.dao;
+package dao;
 /**
  * 类 {@code UserDao}提供对用户信息的增、删、改、查功能.
  *
@@ -9,8 +9,8 @@ package seu.cse.vcampus.dao;
  * @since 2023/8/25
  */
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.User;
+import db.DbHelper;
+import vo.User;
 
 import java.sql.ResultSet;
 
@@ -21,7 +21,7 @@ public class UserDao {
      * 方法addUser增加用户信息.
      *
      * @param user
-     * @return 当用户id存在时返回值为-1，邮箱已经被注册时返回值为-2，添加成功为1，其他原因失败为0
+     * @return 当用户id存在时返回值为-1，添加成功为1，其他原因失败为0
      */
     public static Byte addUser(User user) {
         String pwd = user.getPwd();
@@ -34,10 +34,7 @@ public class UserDao {
             //用户名称已存在
             return -1;
         }
-        if(queryUserByMail(mail)!=null){
-            //邮箱已经注册
-            return -2;
-        }
+
         try {
             DbHelper.executeNonQuery(sqlString);
             //插入成功
@@ -159,7 +156,5 @@ public class UserDao {
         }
         return null;
     }
-
-  
 
 }

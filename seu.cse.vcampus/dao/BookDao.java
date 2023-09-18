@@ -1,8 +1,8 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.Book;
-import seu.cse.vcampus.vo.StoreItem;
+import db.DbHelper;
+import vo.Book;
+import vo.StoreItem;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class BookDao {
                     String bholder=resultSet.getString("bHolder");
                     Book tmpBook=new Book(bid,tmpName,bcnt,bholder);
                     if(tmpBook!=null){
-                    books.add(tmpBook);
+                        books.add(tmpBook);
                     }
                 }
             }
@@ -111,7 +111,7 @@ public class BookDao {
      * @return 书籍删除成功返回1，不存在删除失败返回-1，其他原因失败返回0.
      */
     public static Byte delBook(String bid){
-        
+
         String sqlString="delete * from tblBook where bId ='"+bid+"' ";
         try{
             if(queryBookById(bid)!=null){
@@ -166,7 +166,7 @@ public class BookDao {
                 String bId=rs.getString("bId");
                 Book book=queryBookById(bId);
                 if(book!=null){
-                bookArrayList.add(book);
+                    bookArrayList.add(book);
                 }
             }
         }catch (Exception e){

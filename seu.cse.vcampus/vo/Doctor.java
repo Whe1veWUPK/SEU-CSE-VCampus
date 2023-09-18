@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 /**
  * 类{@code Doctor}医生类，封装着医生信息

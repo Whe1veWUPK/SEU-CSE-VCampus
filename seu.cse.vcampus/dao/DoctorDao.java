@@ -1,7 +1,7 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.Doctor;
+import db.DbHelper;
+import vo.Doctor;
 
 import java.util.ArrayList;
 import java.sql.ResultSet;

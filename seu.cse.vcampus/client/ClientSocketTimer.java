@@ -1,4 +1,4 @@
-package seu.cse.vcampus.client;
+package client;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,14 +10,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ClientSocketTimer {
-    private Socket socket;
-
-    public ClientSocketTimer() {
-        socket = null;
-    }
+    public ClientSocketTimer() { }
 
     public void connect(String host, int port, JSONObject json) throws IOException {
-        socket = new Socket(host, port);
         try(Socket socket = new Socket(host, port);
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))){

@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 /**
  * 类 {@code Course}课程信息类，封装着课程的相关信息
@@ -145,4 +145,5 @@ public class Course {
     public void set_courTime(CourseTime _courTime) {
         this._courTime = _courTime;
     }
+
 }

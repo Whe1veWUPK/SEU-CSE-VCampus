@@ -1,0 +1,138 @@
+package view;
+
+/**
+ * @author wwq
+ * 学籍管理系统 使用“查找学生”功能成功时，显示学生学籍的详细信息
+ */
+
+import org.json.JSONObject;
+
+import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+
+public class StuStatusManageInfoQuery1Dlg extends JFrame {
+    private JSONObject jsonObject = new JSONObject();
+
+    public StuStatusManageInfoQuery1Dlg(JSONObject json) {
+        jsonObject = json;
+        init();
+    }
+
+    void init() {
+        JFrame InfoInput = new JFrame("信息查询");
+
+        // 界面大小
+        InfoInput.setSize(450, 670);
+        // 界面布局先设为null
+        InfoInput.setLayout(null);
+
+        JLabel labelNum = new JLabel("学号：");
+        labelNum.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelNum.setBounds(90, 40, 90, 30);
+        InfoInput.add(labelNum);
+        JTextField textNum = new JTextField();
+        textNum.setText(jsonObject.getString("stunum"));
+        textNum.setBounds(180, 40, 180, 30);
+        InfoInput.add(textNum);
+
+        JLabel labelName = new JLabel("姓名：");
+        labelName.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelName.setBounds(90, 100, 90, 30);
+        InfoInput.add(labelName);
+        JTextField textName = new JTextField();
+        textName.setText(jsonObject.getString("stuname"));
+        textName.setBounds(180, 100, 180, 30);
+        InfoInput.add(textName);
+
+        JLabel labelAge = new JLabel("年龄：");
+        labelAge.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelAge.setBounds(90, 160, 90, 30);
+        InfoInput.add(labelAge);
+        JTextField textAge = new JTextField();
+        textAge.setText(jsonObject.getString("stuage"));
+        textAge.setBounds(180, 160, 180, 30);
+        InfoInput.add(textAge);
+
+        JLabel labelGend = new JLabel("性别：");
+        labelGend.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelGend.setBounds(90, 220, 90, 30);
+        InfoInput.add(labelGend);
+        JPanel gender = new JPanel(); // 单选板块
+        gender.setLayout(new GridLayout(1, 2));
+        MatteBorder gendBorder = new MatteBorder(0, 0, 0, 0, new Color(0x0F866E));
+        gender.setBorder(gendBorder);
+        JRadioButton rb1 = new JRadioButton("男");
+        JRadioButton rb2 = new JRadioButton("女");
+        rb1.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        rb2.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        rb1.setBackground(new Color(0xFFFFFF));
+        rb2.setBackground(new Color(0xFFFFFF));
+        // 放入按钮组中，实现单选
+        ButtonGroup group = new ButtonGroup();
+        group.add(rb1);
+        group.add(rb2);
+        gender.add(rb1);
+        gender.add(rb2);
+        if(jsonObject.getBoolean("stugend")) {
+            rb1.setSelected(true); // true->男
+        } else {
+            rb2.setSelected(true); // false->女
+        }
+
+        gender.setBounds(180, 220, 180, 30);
+        InfoInput.add(gender);
+
+        JLabel labelId = new JLabel("身份证号：");
+        labelId.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelId.setBounds(90, 280, 90, 30);
+        InfoInput.add(labelId);
+        JTextField textId = new JTextField();
+        textId.setText(jsonObject.getString("stuid"));
+        textId.setBounds(180, 280, 180, 30);
+        InfoInput.add(textId);
+
+        JLabel labelSch = new JLabel("学校：");
+        labelSch.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelSch.setBounds(90, 340, 90, 30);
+        InfoInput.add(labelSch);
+        JTextField textSch = new JTextField();
+        textSch.setText(jsonObject.getString("stusch"));
+        textSch.setBounds(180, 340, 180, 30);
+        InfoInput.add(textSch);
+
+        JLabel labelMajor = new JLabel("专业：");
+        labelMajor.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelMajor.setBounds(90, 400, 90, 30);
+        InfoInput.add(labelMajor);
+        JTextField textMajor = new JTextField();
+        textMajor.setText(jsonObject.getString("stumajor"));
+        textMajor.setBounds(180, 400, 180, 30);
+        InfoInput.add(textMajor);
+
+        JLabel labelAddr = new JLabel("家庭住址：");
+        labelAddr.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelAddr.setBounds(90, 460, 90, 30);
+        InfoInput.add(labelAddr);
+        JTextField textAddr = new JTextField();
+        textAddr.setText(jsonObject.getString("stuaddr"));
+        textAddr.setBounds(180, 460, 180, 30);
+        InfoInput.add(textAddr);
+
+        JLabel labelIntake = new JLabel("入学年份：");
+        labelIntake.setFont(new Font("华文中宋", Font.PLAIN, 17));
+        labelIntake.setBounds(90, 520, 90, 30);
+        InfoInput.add(labelIntake);
+        JTextField textIntake = new JTextField();
+        textIntake.setText(jsonObject.getString("stuintake"));
+        textIntake.setBounds(180, 520, 180, 30);
+        InfoInput.add(textIntake);
+
+        // 设置相对位置：屏幕中间
+        InfoInput.setLocationRelativeTo(null);
+        // 禁止对窗口大小进行缩放
+        InfoInput.setResizable(false);
+        // 设置窗口可见
+        InfoInput.setVisible(true);
+    }
+}

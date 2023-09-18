@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 /**
  * 类{@code Book}书籍类，封装着书籍信息
@@ -92,4 +92,6 @@ public class Book {
     public String get_bookHolder() {
         return _bookHolder;
     }
+
 }
+

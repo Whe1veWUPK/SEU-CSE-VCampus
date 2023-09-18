@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 /**
  * 类 {@code StuAcc}学生账户信息类，封装着学生账户的相关信息
@@ -29,12 +29,12 @@ public class StuAcc {
      * @param bal  传入的余额
      */
     public StuAcc(String id,String cour,String book,String dom,String res,double bal){
-          set_stuAccBal(bal);
-          set_stuAccBook(book);
-          set_stuAccCour(cour);
-          set_stuAccID(id);
-          set_stuAccDom(dom);
-          set_stuAccRes(res);
+        set_stuAccBal(bal);
+        set_stuAccBook(book);
+        set_stuAccCour(cour);
+        set_stuAccID(id);
+        set_stuAccDom(dom);
+        set_stuAccRes(res);
 
     }
 
@@ -133,4 +133,5 @@ public class StuAcc {
     public void set_stuAccRes(String _stuAccRes) {
         this._stuAccRes = _stuAccRes;
     }
+
 }

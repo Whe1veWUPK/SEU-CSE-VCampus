@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 /**
  * 类{@code StoreItem}商品类，封装着商品信息

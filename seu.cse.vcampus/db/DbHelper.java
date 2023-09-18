@@ -1,20 +1,12 @@
-package seu.cse.vcampus.db;
+package db;
 
 import java.sql.*;
-/**
- * 类{@code DbHelper}DbHelper 负责链接数据库 包含相关方法对 sql语句进行相对应的操作
- * @quthor Wenqia Wu
- * @author Ruijin Zhang
- * @author Hanlong Liu
- *
- * @since 2023/8/23
- */
+
 public class DbHelper {
     private static final String DB_DRIVER = "net.ucanaccess.jdbc.UcanaccessDriver";
     private static final String DB_URL = "jdbc:ucanaccess://vCampus.accdb";
     private static final String DB_USER = "";
     private static final String DB_PWD = "";
-
 
     /**
      * 链接数据库
@@ -59,9 +51,6 @@ public class DbHelper {
         return result;
     }
 
-
-
-
     /**
      * 查 【Query】
      * @param sql
@@ -83,14 +72,6 @@ public class DbHelper {
 
         return rs;
     }
-
-
-
-
-
-
-
-
 
     public static void free(Statement st) {
         try {
@@ -127,4 +108,5 @@ public class DbHelper {
         free(st);
         free(conn);
     }
+
 }

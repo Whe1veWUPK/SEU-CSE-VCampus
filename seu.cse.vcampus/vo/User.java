@@ -1,4 +1,4 @@
-package seu.cse.vcampus.vo;
+package vo;
 
 
 /**

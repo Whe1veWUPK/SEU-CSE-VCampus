@@ -1,7 +1,7 @@
-package seu.cse.vcampus.dao;
+package dao;
 
-import seu.cse.vcampus.db.DbHelper;
-import seu.cse.vcampus.vo.CourseTime;
+import db.DbHelper;
+import vo.CourseTime;
 
 import java.sql.ResultSet;
 
@@ -20,24 +20,24 @@ public class CourseTimeDao {
      * @return -1 待插入的课程时间已经存在于数据库中 0 插入成功 1 程序严重异常
      */
     public static Byte addCourseTime(CourseTime courseTime){
-         String courseID=courseTime.get_ctID();
-         if(queryCourseTime(courseID)!=null){
-             return -1;
-         }
-         String startHour=courseTime.get_startHour().toString();
-         String startMin=courseTime.get_startMin().toString();
-         String endHour=courseTime.get_endHour().toString();
-         String endMin=courseTime.get_endMin().toString();
-         String day=courseTime.get_day().toString();
-         String sqlString="insert into tblCourseTime(ctDay,ctStartHour,ctStartMin,ctEndHour,ctEndMin,ctID) values('"+day+"','"+startHour+"','"+startMin+"','"+endHour+"','"+endMin+"','"+courseID+"')";
+        String courseID=courseTime.get_ctID();
+        if(queryCourseTime(courseID)!=null){
+            return -1;
+        }
+        String startHour=courseTime.get_startHour().toString();
+        String startMin=courseTime.get_startMin().toString();
+        String endHour=courseTime.get_endHour().toString();
+        String endMin=courseTime.get_endMin().toString();
+        String day=courseTime.get_day().toString();
+        String sqlString="insert into tblCourseTime(ctDay,ctStartHour,ctStartMin,ctEndHour,ctEndMin,ctID) values('"+day+"','"+startHour+"','"+startMin+"','"+endHour+"','"+endMin+"','"+courseID+"')";
 
-         try{
-             DbHelper.executeNonQuery(sqlString);
-             return 0;
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-         return 1;
+        try{
+            DbHelper.executeNonQuery(sqlString);
+            return 0;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return 1;
     }
 
     /**
@@ -46,7 +46,7 @@ public class CourseTimeDao {
      * @return -1 待删除的课程不存在于数据库中 0 删除成功 1 程序严重异常
      */
     public static Byte delCourseTime(String courseID){
-        
+
         if(queryCourseTime(courseID)==null){
             return -1;
         }
